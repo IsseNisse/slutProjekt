@@ -6,3 +6,4 @@ Jag har tänkt använda mig av koden från mitt gymnasiearbete som räknar ut de
 ## Loggbok
 
 ### Lektion 1
+Har gjort planering och ska nu göra skisser på klassdiagram etc. Jag har dock ingen aning hur jag ska göra dom eftersom jag inte vet hur programmet ska se ut över huvudtaget
