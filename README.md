@@ -13,3 +13,6 @@ Har gjort planering och ska nu göra skisser på klassdiagram etc. Jag har dock 
 
 ### Lektion 2
 Har suttit och försökt lösa problemet med min bruteforce algoritm och det fungerar nu
+
+### Lektion 3
+Har gjort en databas som nu förhoppningsvis fungerar och går att använda till projektet
