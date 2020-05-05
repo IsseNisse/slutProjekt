@@ -16,3 +16,6 @@ Har suttit och försökt lösa problemet med min bruteforce algoritm och det fun
 
 ### Lektion 3
 Har gjort en databas som nu förhoppningsvis fungerar och går att använda till projektet
+
+### Lektion 4 
+Har lagt till koden från gymnasiearbetet. Har också lagt till databaskoden och modifierat den så att jag nu kan ta ut den information jag behöver från databasen
