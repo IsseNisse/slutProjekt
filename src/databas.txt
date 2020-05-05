@@ -1,0 +1,24 @@
+startnod
+vilka noder
+vilka edges
+
+nodtabell
+id
+graphId
+
+edgetabell
+id
+weight
+nodeId1
+nodeId2
+graphId
+
+graphtabell
+id
+startnod
+
+select * from graph JOIN node OM graph.id = node.graphId, JOIN edge OM graph.id = edge.graphId
+
+select * from node where graphId = 1;
+row count
+
