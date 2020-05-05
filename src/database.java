@@ -32,6 +32,21 @@ public class database {
                 System.out.println(nodes);
                 System.out.println(edges);
             }
+
+            ResultSet edgeSet = stmt.executeQuery(edgeSelect);
+            System.out.println("The records selected are:");
+            while(edgeSet.next()) {
+                int edgeId = edgeSet.getInt("id");
+                int nodeId1 = edgeSet.getInt("nodeId1");
+                int nodeId2 = edgeSet.getInt("nodeId2");
+                int weight = edgeSet.getInt("weight");
+                int graphId = edgeSet.getInt("graphId");
+                System.out.println(edgeId);
+                System.out.println(nodeId1);
+                System.out.println(nodeId2);
+                System.out.println(weight);
+                System.out.println(graphId);
+            }
             /*System.out.println("Total number of records = ");
 
             ResultSet linkset = stmt.executeQuery(edgeSelect);
