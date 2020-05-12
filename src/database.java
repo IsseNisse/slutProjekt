@@ -4,10 +4,7 @@ public class database {
     public static void main(String[] args) {
         try {
             // Set up connection to database
-            Connection conn = DriverManager.getConnection(
-                    "jdbc:mysql://"+DatabaseLoginData.DBURL + ":" + DatabaseLoginData.port + "/" + DatabaseLoginData.DBname +
-                            "? allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC",
-                    DatabaseLoginData.user, DatabaseLoginData.password);
+            Connection conn = getConnection();
 
             // Setup statement
             int x = 1;
@@ -67,5 +64,12 @@ public class database {
         } catch(SQLException ex) {
             ex.printStackTrace();
         }
+    }
+
+    protected static Connection getConnection() throws SQLException {
+        return DriverManager.getConnection(
+                        "jdbc:mysql://"+DatabaseLoginData.DBURL + ":" + DatabaseLoginData.port + "/" + DatabaseLoginData.DBname +
+                                "? allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC",
+                        DatabaseLoginData.user, DatabaseLoginData.password);
     }
 }

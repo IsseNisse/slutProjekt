@@ -1,5 +1,9 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -13,6 +17,55 @@ public class graph {
     private int weight;
     ArrayList<edge> edges = new ArrayList<>();
     ArrayList<node> nodes = new ArrayList<>();
+
+    int id;
+    int startNode;
+    int nodesQ;
+    int edgesQ;
+
+    int edgeId;
+    int nodeId1;
+    int nodeId2;
+    int weightQ;
+    int graphId;
+
+    public void database() {
+        try {
+            Connection conn = database.getConnection();
+
+            int x = 1;
+            Statement stmt = conn.createStatement();
+            // Create query and execute
+            String strSelect = "select * from graph where id = " + x;
+            String edgeSelect = "select * from edges where id = " + x;
+            System.out.println("The SQL statement is: " + strSelect + "\n");
+
+            ResultSet rset = stmt.executeQuery(strSelect);
+
+            System.out.println("The records selected are:");
+            while(rset.next()) {
+                id = rset.getInt("id");
+                startNode = rset.getInt("startNode");
+                nodesQ = rset.getInt("nodes");
+                edgesQ = rset.getInt("edges");
+            }
+
+            ResultSet edgeSet = stmt.executeQuery(edgeSelect);
+            System.out.println("The records selected are:");
+            while(edgeSet.next()) {
+                edgeId = edgeSet.getInt("id");
+                nodeId1 = edgeSet.getInt("nodeId1");
+                nodeId2 = edgeSet.getInt("nodeId2");
+                weightQ = edgeSet.getInt("weight");
+                graphId = edgeSet.getInt("graphId");
+            }
+
+            conn.close();
+            stmt.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
 
     /**
      * Function to call for and make a new graph
