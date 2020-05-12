@@ -37,7 +37,7 @@ public class graph {
             Statement stmt = conn.createStatement();
             // Create query and execute
             String strSelect = "select * from graph where id = " + x;
-            String edgeSelect = "select * from edges where id = " + x;
+            String edgeSelect = "select * from edges";
             System.out.println("The SQL statement is: " + strSelect + "\n");
 
             ResultSet rset = stmt.executeQuery(strSelect);
@@ -90,9 +90,9 @@ public class graph {
             e.printStackTrace();
         }
         assert tgb != null;
-        start = tgb.nextInt();
-        node = tgb.nextInt();
-        edge = tgb.nextInt();
+        start = startNode;
+        node = nodesQ;
+        edge = edgesQ;
 
         for (int i = 0; i < edge; i++) {
             node fromNode = null;
