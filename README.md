@@ -19,3 +19,6 @@ Har gjort en databas som nu förhoppningsvis fungerar och går att använda till
 
 ### Lektion 4 
 Har lagt till koden från gymnasiearbetet. Har också lagt till databaskoden och modifierat den så att jag nu kan ta ut den information jag behöver från databasen
+
+### Lektion 5 
+Har börjat modifiera koden så att den kan använda informationen från databasen i programmet.
