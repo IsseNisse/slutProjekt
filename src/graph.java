@@ -5,8 +5,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner;
 
 public class graph {
     protected int start;
@@ -29,6 +27,9 @@ public class graph {
     int weightQ;
     int graphId;
 
+    ResultSet edgeSet;
+    int i;
+
     public void database() {
         try {
             Connection conn = database.getConnection();
@@ -37,7 +38,7 @@ public class graph {
             Statement stmt = conn.createStatement();
             // Create query and execute
             String strSelect = "select * from graph where id = " + x;
-            String edgeSelect = "select * from edges";
+            String edgeSelect = "select * from edges where id = " + i;
             System.out.println("The SQL statement is: " + strSelect + "\n");
 
             ResultSet rset = stmt.executeQuery(strSelect);
@@ -50,7 +51,7 @@ public class graph {
                 edgesQ = rset.getInt("edges");
             }
 
-            ResultSet edgeSet = stmt.executeQuery(edgeSelect);
+            edgeSet = stmt.executeQuery(edgeSelect);
             System.out.println("The records selected are:");
             while(edgeSet.next()) {
                 edgeId = edgeSet.getInt("id");
@@ -60,8 +61,7 @@ public class graph {
                 graphId = edgeSet.getInt("graphId");
             }
 
-            conn.close();
-            stmt.close();
+
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
@@ -78,7 +78,7 @@ public class graph {
      * A read file that reads the txt file with information and adds the numbers to their right place
      */
     public void read() {
-        Scanner tgb = null;
+        /*Scanner tgb = null;
         try {
             // Graph 1 is the graph from the example in my scientific report
             // Graph 2 is a graph of the 10 largest cities in Sweden
@@ -89,18 +89,21 @@ public class graph {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        assert tgb != null;
+        assert tgb != null;*/
+
         start = startNode;
         node = nodesQ;
         edge = edgesQ;
 
-        for (int i = 0; i < edge; i++) {
+        for (i = 0; i < edge; i++) {
             node fromNode = null;
             node toNode = null;
-            from = tgb.nextInt();
-            if (tgb.hasNext()) {
-                to = tgb.nextInt();
-                weight = tgb.nextInt();
+            try {
+                from = edgeSet.getInt("nodeId1");
+                to = edgeSet.getInt("nodeId2");
+                weight = edgeSet.getInt("weight");
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
             }
             for (int j = 0; j < nodes.size(); j++) {
                 if (nodes.get(j).getNode1() == from) {
