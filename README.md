@@ -22,3 +22,6 @@ Har lagt till koden från gymnasiearbetet. Har också lagt till databaskoden och
 
 ### Lektion 5 
 Har börjat modifiera koden så att den kan använda informationen från databasen i programmet.
+
+### Lektion 6
+Har försökt få till så att programmet kan använda sig av infon från databasen men har inte gått så bra.
