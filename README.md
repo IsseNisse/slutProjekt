@@ -6,6 +6,9 @@ Jag har tänkt använda mig av koden från mitt gymnasiearbete som räknar ut de
 ## Länk till githubrepository med kod för att räkna ut kortaste vägen
 https://github.com/IsseNisse/granneMetoden
 
+## Databas
+![Databas Design](databas.png)
+
 ## Loggbok
 
 ### Lektion 1
