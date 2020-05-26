@@ -28,3 +28,6 @@ Har börjat modifiera koden så att den kan använda informationen från databas
 
 ### Lektion 6
 Har försökt få till så att programmet kan använda sig av infon från databasen men har inte gått så bra.
+
+### Lektion 7
+Har gjort arrayLists för viss information från databasen för att lättare kunna implemetera den  i koden. Dock fungerar det fortfarande inte då den inte lägger in någon information från databasen i arraylisten och jag vet inte varför.
