@@ -9,6 +9,9 @@ https://github.com/IsseNisse/granneMetoden
 ## Databas
 ![Databas Design](databas.png)
 
+## Post Mortem
+https://github.com/IsseNisse/slutProjekt/blob/master/postMortem.md
+
 ## Loggbok
 
 ### Lektion 1
